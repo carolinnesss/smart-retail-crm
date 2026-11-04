@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
 
     -- Integrity Constraints
-    CONSTRAINT chk_payment_method CHECK (payment_method IN ('cash', 'savings', 'debt', 'split')),
+    CONSTRAINT chk_payment_method CHECK (payment_method IN ('TUNAI', 'KASBON')),
     CONSTRAINT chk_transaction_status CHECK (status IN ('completed', 'cancelled', 'refunded')),
     CONSTRAINT chk_total_amount_positive CHECK (total_amount >= 0),
     CONSTRAINT chk_discount_positive CHECK (discount_amount >= 0),
