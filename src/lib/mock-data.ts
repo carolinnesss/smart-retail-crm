@@ -31,6 +31,7 @@ export const INITIAL_CUSTOMER_ACCOUNTS: ICustomerAccount[] = [
     password_hash: 'budi123',
     status: 'PENDING',
     created_at: '2026-11-04T08:00:00.000Z',
+    updated_at: '2026-11-04T08:00:00.000Z',
   },
   {
     id: 'cust-acc-002',
@@ -41,6 +42,7 @@ export const INITIAL_CUSTOMER_ACCOUNTS: ICustomerAccount[] = [
     status: 'AKTIF',
     approved_at: '2026-11-01T08:00:00.000Z',
     created_at: '2026-10-31T08:00:00.000Z',
+    updated_at: '2026-11-01T08:00:00.000Z',
   },
 ];
 
