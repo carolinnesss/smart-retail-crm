@@ -28,6 +28,7 @@ import {
   INITIAL_TRANSACTIONS,
   INITIAL_DEBT_LEDGER,
   INITIAL_STORE_SETTINGS,
+  INITIAL_CUSTOMER_ACCOUNTS,
 } from '../mock-data';
 import { calculateRestockPredictions } from '../ewma-radar';
 import { formatIDR } from '../formatters';
@@ -35,6 +36,8 @@ import { checkCreditLimit, processDebtInstallment } from '../credit-guard';
 import { validateGuestCheckoutRules } from '../guest-rules';
 import { roundQuantity } from '../pricing';
 import { normalizeIndonesianPhone } from '../whatsapp';
+
+const globalRepo = globalThis as unknown as { __mockRepoInstance?: MockDataRepository };
 
 export class MockDataRepository implements IDataRepository {
   private static instance: MockDataRepository | null = null;
@@ -52,14 +55,15 @@ export class MockDataRepository implements IDataRepository {
     this.products = JSON.parse(JSON.stringify(INITIAL_PRODUCTS));
     this.transactions = JSON.parse(JSON.stringify(INITIAL_TRANSACTIONS));
     this.debtLedger = JSON.parse(JSON.stringify(INITIAL_DEBT_LEDGER));
-    this.customerAccounts = [];
+    this.customerAccounts = JSON.parse(JSON.stringify(INITIAL_CUSTOMER_ACCOUNTS));
   }
 
   public static getInstance(): MockDataRepository {
-    if (!MockDataRepository.instance) {
-      MockDataRepository.instance = new MockDataRepository();
+    if (!globalRepo.__mockRepoInstance) {
+      globalRepo.__mockRepoInstance = new MockDataRepository();
     }
-    return MockDataRepository.instance;
+    MockDataRepository.instance = globalRepo.__mockRepoInstance;
+    return globalRepo.__mockRepoInstance;
   }
 
   public async resetMockData(): Promise<void> {
@@ -68,7 +72,7 @@ export class MockDataRepository implements IDataRepository {
     this.products = JSON.parse(JSON.stringify(INITIAL_PRODUCTS));
     this.transactions = JSON.parse(JSON.stringify(INITIAL_TRANSACTIONS));
     this.debtLedger = JSON.parse(JSON.stringify(INITIAL_DEBT_LEDGER));
-    this.customerAccounts = [];
+    this.customerAccounts = JSON.parse(JSON.stringify(INITIAL_CUSTOMER_ACCOUNTS));
   }
 
   // --- Store Settings ---

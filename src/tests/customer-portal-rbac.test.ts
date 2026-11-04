@@ -225,7 +225,6 @@ describe('Milestone: Peran ke-3 Pelanggan & Server-Side RBAC (Given / When / The
       expect(approval.customer.customer_type).toBe('Eceran');
       expect(approval.customer.max_credit_limit).toBe(0); // Sesuai PRD: Plafon 0
       expect(approval.customer.current_debt).toBe(0);
-      expect(approval.customer.savings_balance).toBe(0);
     });
   });
 

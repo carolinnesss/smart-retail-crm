@@ -5,6 +5,7 @@ import {
   IDebtLedger,
   IDebtPayment,
   IStoreSettings,
+  ICustomerAccount,
 } from './types';
 
 export const INITIAL_STORE_SETTINGS: IStoreSettings = {
@@ -20,6 +21,28 @@ export const INITIAL_STORE_SETTINGS: IStoreSettings = {
   created_at: '2026-10-01T00:00:00.000Z',
   updated_at: '2026-11-01T00:00:00.000Z',
 };
+
+export const INITIAL_CUSTOMER_ACCOUNTS: ICustomerAccount[] = [
+  {
+    id: 'cust-acc-001',
+    customer_id: null,
+    name: 'Budi Santoso (Calon Mitra)',
+    whatsapp_number: '081234567890',
+    password_hash: 'budi123',
+    status: 'PENDING',
+    created_at: '2026-11-04T08:00:00.000Z',
+  },
+  {
+    id: 'cust-acc-002',
+    customer_id: '10000000-0000-0000-0000-000000000002',
+    name: 'Warung Bu Siti',
+    whatsapp_number: '081298765432',
+    password_hash: 'siti123',
+    status: 'AKTIF',
+    approved_at: '2026-11-01T08:00:00.000Z',
+    created_at: '2026-10-31T08:00:00.000Z',
+  },
+];
 
 export const INITIAL_CUSTOMERS: ICustomer[] = [
   {

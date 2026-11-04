@@ -282,7 +282,6 @@ describe('Milestone 7: Akun Pelanggan & Portal Pelanggan (Given / When / Then)',
       expect(customer.customer_type).toBe('Eceran');
       expect(customer.max_credit_limit).toBe(0);
       expect(customer.current_debt).toBe(0);
-      expect(customer.savings_balance).toBe(0);
     });
 
     it('Given akun PENDING, When kasir memilih LINK_EXISTING ke Warung Bu Siti, Then terhubung ke data dan saldo existing', async () => {

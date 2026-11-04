@@ -48,10 +48,11 @@ let mockUsers: MockUserRecord[] = JSON.parse(JSON.stringify(INITIAL_MOCK_USERS))
  * MockAuth is completely disabled.
  */
 export function isMockAuthAllowed(): boolean {
-  if (process.env.NODE_ENV === 'production') {
+  if (isSupabaseConfigured()) {
     return false;
   }
-  if (isSupabaseConfigured()) {
+  // Allow mock auth in development, on Vercel preview/demo deployments, or if explicitly enabled
+  if (process.env.NODE_ENV === 'production' && !process.env.VERCEL && process.env.ALLOW_DEMO_AUTH !== 'true') {
     return false;
   }
   return true;
