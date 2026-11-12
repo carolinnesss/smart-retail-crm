@@ -49,7 +49,7 @@ export default function PelangganLoginPage() {
   };
 
   return (
-    <div className="flex flex-col flex-1 px-6 py-8 justify-between">
+    <div className="flex flex-col flex-1 px-6 py-8 md:py-12 md:max-w-md md:w-full md:mx-auto justify-between">
       <div>
         {/* Brand Header */}
         <div className="flex items-center gap-3 mb-8 pt-4">

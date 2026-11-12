@@ -62,7 +62,7 @@ export default function PelangganRegisterPage() {
   };
 
   return (
-    <div className="flex flex-col flex-1 px-6 py-8">
+    <div className="flex flex-col flex-1 px-6 py-8 md:py-12 md:max-w-lg md:w-full md:mx-auto">
       {/* Top Header */}
       <div className="flex items-center gap-2 mb-6">
         <Link

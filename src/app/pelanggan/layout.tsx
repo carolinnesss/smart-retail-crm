@@ -13,7 +13,7 @@ export default function PelangganLayout({
 }) {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans">
-      <div className="max-w-md mx-auto min-h-screen bg-white shadow-xl flex flex-col relative pb-8">
+      <div className="w-full max-w-md md:max-w-[1100px] mx-auto min-h-screen bg-white shadow-xl flex flex-col relative pb-8">
         {children}
       </div>
     </div>

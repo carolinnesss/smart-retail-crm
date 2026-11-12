@@ -467,7 +467,7 @@ export default function PelangganPortalPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col pb-24">
       {/* Header Mobile / Top bar + Navigation Tabs */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-2xs">
-        <div className="px-4 py-3 flex items-start justify-between gap-2">
+        <div className="px-4 md:px-6 py-3 flex items-start justify-between gap-2">
           <div className="min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">
@@ -526,8 +526,8 @@ export default function PelangganPortalPage() {
         </div>
 
         {/* 3-Tab Switcher */}
-        <div className="px-4 pb-3">
-          <div className="grid grid-cols-3 gap-1 bg-slate-100 p-1 rounded-xl">
+        <div className="px-4 md:px-6 pb-3">
+          <div className="grid grid-cols-3 gap-1 md:gap-2 bg-slate-100 p-1 rounded-xl">
             <button
               type="button"
               onClick={() => setActiveTab('overview')}
@@ -582,7 +582,7 @@ export default function PelangganPortalPage() {
 
       {/* General Error state */}
       {error && (
-        <div className="mx-4 mt-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center gap-2 font-medium">
+        <div className="mx-4 md:mx-6 mt-4 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xl flex items-center gap-2 font-medium">
           <AlertTriangle className="w-4 h-4 shrink-0" />
           <span>{error}</span>
         </div>
@@ -590,7 +590,7 @@ export default function PelangganPortalPage() {
 
       {/* Action Feedback Banner (e.g. Stock Limit Alert) */}
       {actionNotice && (
-        <div className="mx-4 mt-3 p-3 bg-amber-50 border border-amber-200 text-amber-900 text-xs rounded-xl flex items-start justify-between gap-2 font-medium">
+        <div className="mx-4 md:mx-6 mt-3 p-3 bg-amber-50 border border-amber-200 text-amber-900 text-xs rounded-xl flex items-start justify-between gap-2 font-medium">
           <div className="flex items-start gap-2">
             <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <span>{actionNotice}</span>
@@ -609,9 +609,9 @@ export default function PelangganPortalPage() {
       {activeTab === 'overview' && (
         <>
           {/* Main KPI Cards: Kasbon Aktif & Limit Kredit */}
-          <div className="px-4 py-4 space-y-3">
+          <div className="px-4 md:px-6 py-4 flex flex-col md:grid md:grid-cols-2 gap-3 md:gap-4">
             {/* Kasbon Aktif & Jatuh Tempo */}
-            <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm space-y-3">
+            <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm space-y-3 md:order-1 md:flex md:flex-col md:justify-between">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div
@@ -716,7 +716,7 @@ export default function PelangganPortalPage() {
             <button
               type="button"
               onClick={() => setActiveTab('catalog')}
-              className="w-full text-left bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-4 shadow-md shadow-emerald-600/20 flex items-center justify-between gap-3 active:scale-[0.99] transition-transform"
+              className="w-full text-left bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-4 shadow-md shadow-emerald-600/20 flex items-center justify-between gap-3 active:scale-[0.99] transition-transform md:order-3 md:col-span-2"
             >
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-100 block">
@@ -737,13 +737,15 @@ export default function PelangganPortalPage() {
             </button>
 
             {/* Info Box */}
-            <div className="p-3 bg-indigo-50/70 border border-indigo-100 rounded-xl text-[11px] text-indigo-900 leading-relaxed">
-              💡 <strong>Informasi:</strong> Riwayat toko mencatat pembayaran secara transparan. Jika ingin melunasi kasbon, harap hubungi pemilik toko.
+            <div className="p-3 md:p-4 bg-indigo-50/70 border border-indigo-100 rounded-xl md:rounded-2xl text-[11px] text-indigo-900 leading-relaxed md:order-2 md:flex md:items-center">
+              <div>
+                💡 <strong>Informasi:</strong> Riwayat toko mencatat pembayaran secara transparan. Jika ingin melunasi kasbon, harap hubungi pemilik toko.
+              </div>
             </div>
           </div>
 
           {/* History Header */}
-          <div className="px-4 mt-1">
+          <div className="px-4 md:px-6 mt-1">
             <div className="bg-white p-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 flex items-center gap-2">
               <Receipt className="w-4 h-4 text-emerald-600" />
               <span>Riwayat Belanja ({transactions.length})</span>
@@ -751,10 +753,10 @@ export default function PelangganPortalPage() {
           </div>
 
           {/* Transactions List */}
-          <div className="px-4 py-4 flex-1">
-            <div className="space-y-3">
+          <div className="px-4 md:px-6 py-4 flex-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-start">
               {transactions.length === 0 ? (
-                <div className="text-center py-10 text-slate-400 text-xs">
+                <div className="text-center py-10 text-slate-400 text-xs md:col-span-2">
                   Belum ada transaksi belanja yang tercatat.
                 </div>
               ) : (
@@ -848,7 +850,7 @@ export default function PelangganPortalPage() {
 
       {/* ==================== TAB 2: KATALOG & CEK STOK ==================== */}
       {activeTab === 'catalog' && (
-        <div className="px-4 py-4 space-y-3 flex-1">
+        <div className="px-4 md:px-6 py-4 space-y-3 md:space-y-4 flex-1">
           {/* Tier Explanation Banner */}
           <div
             className={`p-3 rounded-xl border text-xs flex items-start gap-2.5 ${
@@ -898,7 +900,7 @@ export default function PelangganPortalPage() {
             </div>
 
             {/* Category Chips */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
+            <div className="flex items-center gap-1.5 overflow-x-auto md:flex-wrap md:overflow-visible pb-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -971,7 +973,7 @@ export default function PelangganPortalPage() {
               </p>
             </div>
           ) : (
-            <div className="space-y-2.5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 md:gap-3.5">
               {filteredProducts.map((product) => {
                 const qtyInCart = estimationQtyMap.get(product.id) || 0;
                 const isOut = product.stock_status === 'HABIS';
@@ -983,7 +985,7 @@ export default function PelangganPortalPage() {
                 return (
                   <div
                     key={product.id}
-                    className={`bg-white rounded-2xl border p-3.5 transition-all ${
+                    className={`bg-white rounded-2xl border p-3.5 flex flex-col justify-between h-full transition-all ${
                       isOut
                         ? 'border-slate-200 opacity-65 bg-slate-50/70'
                         : qtyInCart > 0
@@ -1114,7 +1116,7 @@ export default function PelangganPortalPage() {
 
       {/* ==================== TAB 3: ESTIMASI BELANJA & WHATSAPP ==================== */}
       {activeTab === 'estimate' && (
-        <div className="px-4 py-4 space-y-3 flex-1">
+        <div className="px-4 md:px-6 py-4 space-y-3 md:space-y-4 flex-1">
           <div className="p-3 bg-indigo-50/70 border border-indigo-100 rounded-xl text-[11px] text-indigo-900 leading-relaxed">
             🧮 <strong>Estimasi Belanja:</strong> Hitung perkiraan total belanja Anda (otomatis memakai{' '}
             <strong>
@@ -1146,9 +1148,10 @@ export default function PelangganPortalPage() {
               </button>
             </div>
           ) : (
-            <>
+            <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-12 md:gap-5 md:items-start">
               {/* Item List */}
-              <div className="space-y-2.5">
+              <div className="md:col-span-7 space-y-3">
+                <div className="space-y-2.5">
                 {estimationItems.map((item) => {
                   const isDecimalUnit = supportsDecimalQuantity(
                     item.product.unit
@@ -1271,7 +1274,10 @@ export default function PelangganPortalPage() {
                   Kosongkan Daftar
                 </button>
               </div>
+              </div>
 
+              {/* Payment Plan Simulation & Summary Column */}
+              <div className="md:col-span-5 space-y-3 md:sticky md:top-36">
               {/* Payment Plan Simulation */}
               <div className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3 shadow-2xs">
                 <div>
@@ -1434,14 +1440,15 @@ export default function PelangganPortalPage() {
                   </button>
                 </div>
               </div>
-            </>
+              </div>
+            </div>
           )}
         </div>
       )}
 
       {/* Floating Bottom Bar when browsing Overview/Catalog with items in Estimate */}
       {activeTab !== 'estimate' && estimationSummary.itemCount > 0 && (
-        <div className="fixed bottom-4 inset-x-0 mx-auto max-w-md px-4 z-40 pointer-events-none">
+        <div className="fixed bottom-4 inset-x-0 mx-auto w-full max-w-md md:max-w-[1100px] px-4 md:px-6 z-40 pointer-events-none">
           <button
             type="button"
             onClick={() => setActiveTab('estimate')}
