@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Portal Pelanggan Toko Sembako',
-  description: 'Akses mandiri cek saldo tabungan, batas plafon kasbon, histori belanja, dan mutasi saldo.',
+  description: 'Akses mandiri cek katalog produk, stok terkini, estimasi belanja, kasbon, dan riwayat belanja.',
 };
 
 export default function PelangganLayout({

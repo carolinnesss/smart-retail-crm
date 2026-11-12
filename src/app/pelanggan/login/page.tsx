@@ -164,12 +164,12 @@ export default function PelangganLoginPage() {
 
       {/* Cashier Door Switch */}
       <div className="mt-8 text-center pt-4 border-t border-slate-100">
-        <p className="text-[11px] text-slate-400 mb-1">Apakah Anda Pemilik atau Kasir Toko?</p>
+        <p className="text-[11px] text-slate-400 mb-1">Apakah Anda Pemilik Toko?</p>
         <Link
           href="/login"
           className="text-xs font-bold text-slate-600 hover:text-emerald-700 transition-colors"
         >
-          Masuk ke Portal Kasir &rarr;
+          Masuk ke Portal Pemilik Toko &rarr;
         </Link>
       </div>
     </div>

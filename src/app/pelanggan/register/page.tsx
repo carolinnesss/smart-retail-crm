@@ -96,7 +96,7 @@ export default function PelangganRegisterPage() {
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
             Terima kasih, <strong>{successData.name}</strong>. Pendaftaran akun Anda sedang menunggu konfirmasi
-            dari pihak kasir / pemilik toko. Anda dapat mengabari kasir saat bertransaksi di toko.
+            dari pihak pemilik toko. Anda dapat mengabari pemilik toko saat bertransaksi di toko.
           </p>
           <div className="pt-2">
             <Link
@@ -120,7 +120,7 @@ export default function PelangganRegisterPage() {
             <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-2.5 text-xs text-amber-800">
               <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
               <span>
-                <strong>Persetujuan Kasir:</strong> Demi keamanan data utang & tabungan toko, akun baru otomatis berstatus <strong>PENDING</strong> dan harus disetujui terlebih dahulu oleh staf kasir / pemilik di akun kasir/owner sebelum Anda dapat masuk.
+                <strong>Persetujuan Pemilik Toko:</strong> Demi keamanan data utang & tabungan toko, akun baru otomatis berstatus <strong>PENDING</strong> dan harus disetujui terlebih dahulu oleh pemilik toko sebelum Anda dapat masuk.
               </span>
             </div>
 
@@ -205,7 +205,7 @@ export default function PelangganRegisterPage() {
 
             <div className="p-3 bg-amber-50 border border-amber-200/80 rounded-xl text-[11px] text-amber-900 leading-relaxed">
               <strong>Catatan:</strong> Akun baru berstatus <em>PENDING</em> dan belum dapat login langsung.
-              Kasir atau pemilik toko akan menyetujui akun Anda terlebih dahulu.
+              Pemilik toko akan menyetujui akun Anda terlebih dahulu.
             </div>
           </div>
 
